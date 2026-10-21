@@ -1,0 +1,47 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Form builder: describes a form in code and renders it to HTML",
+  "author": "Kichigin Sergey",
+  "license": "ISC",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kicha3007-boop/typescript-project-81.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "development": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "lint": "oxlint && oxfmt --ignore-path=.oxfmtignore --check",
+    "lint-fix": "oxfmt --ignore-path=.oxfmtignore && oxlint --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test-coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "es-toolkit": "^1.51.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.0"
+  }
+}
